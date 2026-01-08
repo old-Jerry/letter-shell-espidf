@@ -225,7 +225,7 @@
 /**
  * @brief shell默认用户
  */
-#define     SHELL_DEFAULT_USER          "letter"
+#define     SHELL_DEFAULT_USER          "jerry"
 #endif /** SHELL_DEFAULT_USER */
 
 #ifndef SHELL_DEFAULT_USER_PASSWORD

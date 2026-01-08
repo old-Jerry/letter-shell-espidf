@@ -95,7 +95,7 @@ static const char *shellText[] =
         "\r\n"
         "Build:       "__DATE__" "__TIME__"\r\n"
         "Version:     "SHELL_VERSION"\r\n"
-        "Copyright:   (c) 2020 Letter\r\n",
+        "Copyright:   (c) 2026 oldjerry\r\n",
 #endif
     [SHELL_TEXT_CMD_TOO_LONG] = 
         "\r\nWarning: Command is too long\r\n",

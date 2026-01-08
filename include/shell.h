@@ -14,7 +14,7 @@
 
 #include "shell_cfg.h"
 
-#define     SHELL_VERSION               "3.2.4"                 /**< 版本号 */
+#define     SHELL_VERSION               "3.2.4-ESPidf"                 /**< 版本号 */
 
 
 /**
