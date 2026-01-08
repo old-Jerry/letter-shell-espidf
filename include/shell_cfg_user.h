@@ -22,4 +22,8 @@
  */
 #define     SHELL_GET_TICK()            xTaskGetTickCount()
 
+#define SHELL_MALLOC(size)              pvPortMalloc(size)
+
+#define SHELL_FREE(obj)                 vPortFree(obj)
+
 #endif

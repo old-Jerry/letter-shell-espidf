@@ -39,14 +39,14 @@
  * @brief 是否使用shell伴生对象
  *        一些扩展的组件(文件系统支持，日志工具等)需要使用伴生对象
  */
-#define     SHELL_USING_COMPANION       0
+#define     SHELL_USING_COMPANION       1
 #endif /** SHELL_USING_COMPANION */
 
 #ifndef SHELL_SUPPORT_END_LINE
 /**
  * @brief 支持shell尾行模式
  */
-#define     SHELL_SUPPORT_END_LINE      0
+#define     SHELL_SUPPORT_END_LINE      1
 #endif /** SHELL_SUPPORT_END_LINE */
 
 #ifndef SHELL_HELP_LIST_USER
@@ -60,7 +60,7 @@
 /**
  * @brief 是否在输出命令列表中列出变量
  */
-#define     SHELL_HELP_LIST_VAR         0
+#define     SHELL_HELP_LIST_VAR         1
 #endif /** SHELL_HELP_LIST_VAR */
 
 #ifndef SHELL_HELP_LIST_KEY
