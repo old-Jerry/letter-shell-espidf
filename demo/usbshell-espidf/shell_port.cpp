@@ -71,9 +71,15 @@ short uartShellWrite(char *data, unsigned short len)
 }
 short usbShellWrite(char *data, unsigned short len)
 {
-    if (len == 0)
-    {return 0;}
+    if (len == 0) return 0;
+    
+    // HWCDC的write()内部已经调用txfifo_flush()和ena_intr_mask触发ISR
     size_t written = SHELL_USB_STREAM.write(reinterpret_cast<uint8_t *>(data), len);
+    
+    // 添加微秒级延迟，给ISR时间从ring buffer取数据发送到USB
+    // 200us足够ISR处理，且不会造成明显卡顿
+    delayMicroseconds(200);
+    
     return static_cast<short>(written);
 }
 
@@ -157,6 +163,10 @@ void uartShellInit(void)
 }
 void usbShellInit(void)
 {
+    // 增大USB CDC的TX缓冲区，减少数据丢失
+    SHELL_USB_STREAM.setTxBufferSize(1024);
+    SHELL_USB_STREAM.setRxBufferSize(512);
+    
     // 清零Shell结构体，避免未初始化的函数指针
     memset(&usbShell, 0, sizeof(Shell));
     
